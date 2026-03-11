@@ -1,0 +1,44 @@
+[submodule "src/launchers_bci"]
+	path = src/launchers_bci
+	url = git@github.com:PaoloFori/launchers_bci.git
+	branch = lsl_vr
+[submodule "src/rosneuro_acquisition_lsl"]
+	path = src/rosneuro_acquisition_lsl
+	url = git@github.com:PaoloFori/rosneuro_acquisition_lsl.git
+[submodule "src/ROS-TCP-Endpoint"]
+	path = src/ROS-TCP-Endpoint
+	url = https://github.com/Unity-Technologies/ROS-TCP-Endpoint.git
+[submodule "src/feedback_bci_vr"]
+	path = src/feedback_bci_vr
+	url = git@github.com:PaoloFori/feedback_bci_vr.git
+[submodule "src/bag_bci"]
+	path = src/bag_bci
+	url = git@github.com:PaoloFori/bag_bci.git
+	branch = vr
+[submodule "src/processing_bci"]
+	path = src/processing_bci
+	url = git@github.com:PaoloFori/processing_bci.git
+	branch = vr
+[submodule "src/qda_bci"]
+	path = src/qda_bci
+	url = git@github.com:PaoloFori/qda_bci.git
+	branch = vr
+[submodule "src/rosneuro_integrator"]
+	path = src/rosneuro_integrator
+	url = git@github.com:PaoloFori/rosneuro_integrator.git
+	branch = cvsa_mi
+[submodule "src/rosneuro_integrator_buffer"]
+	path = src/rosneuro_integrator_buffer
+	url = git@github.com:PaoloFori/rosneuro_integrator_buffer.git
+	branch = cvsa_mi
+[submodule "src/test_pipeline"]
+	path = src/test_pipeline
+	url = git@github.com:PaoloFori/test_pipeline.git
+	branch = cvsa_mi
+[submodule "src/rosneuro_filters_car"]
+	path = src/rosneuro_filters_car
+	url = git@github.com:PaoloFori/rosneuro_filters_car.git
+	branch = no_eog
+[submodule "src/artifacts_bci"]
+	path = src/artifacts_bci
+	url = git@github.com:PaoloFori/artifacts_bci.git
