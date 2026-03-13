@@ -42,3 +42,7 @@
 [submodule "src/artifacts_bci"]
 	path = src/artifacts_bci
 	url = git@github.com:PaoloFori/artifacts_bci.git
+[submodule "src/analysis_bci"]
+	path = src/analysis_bci
+	url = git@github.com:PaoloFori/analysis_bci.git
+	branch = cvsa_mi
