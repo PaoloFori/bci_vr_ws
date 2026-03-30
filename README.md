@@ -40,3 +40,26 @@ To clone the entire workspace, including all submodules and dependencies:
 ```bash
 git clone --recursive [URL_OF_THIS_REPO]
 ```
+
+---
+
+## 📦 Reproducibility & Development Environment (Distrobox)
+
+To ensure that the system runs with the exact same dependencies and ROS configuration used during development, this repository includes a dedicated **`distrobox/`** folder. 
+
+Inside, you will find:
+* **`Dockerfile`**: A complete "recipe" that builds an image with ROS Noetic, ROSNeuro (via official PPA), LibLSL, and all required C++/Python dependencies.
+* **`README.md`**: Detailed instructions on how to build the image and create the container.
+
+### Why use this?
+* **Zero Configuration**: No need to manually install ROSNeuro or complex BCI libraries on your host OS.
+* **Isolation**: Keeps your main operating system clean from specific BCI drivers and PPA repositories.
+* **Consistency**: Guarantees that signal processing (Hilbert Transform, filters) behaves identically across different machines.
+
+To get started with the environment, navigate to the folder and follow the instructions:
+```bash
+cd distrobox
+# Read the README.md inside for setup steps
+```
+
+
