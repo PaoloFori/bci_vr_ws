@@ -20,18 +20,23 @@ Depending on your Distrobox version, choose one of the following options to buil
 If your version does not support the direct `--dockerfile` flag:
 
 1. **Build the local image:**
+Go to ```bash bci_vr_ws/distrobox``` and: 
    ```bash
    podman build -t bci_image .
    ```
 2. **Create the Distrobox container:**
    ```bash
-   distrobox create --name bci_env --image localhost/bci_image
+   distrobox create --name bci_cvsaMiVr --image localhost/bci_image
    ```
-
-### Option B: Direct Build via Distrobox (Newer versions)
-If you have a recent version of Distrobox:
+3. **Enter in the Distrobox container:**
    ```bash
-   distrobox create --name bci_env --dockerfile ./Dockerfile
+   distrobox enter bci_cvsaMiVr
+   ```
+### Option B: Direct Build via Distrobox (Newer versions)
+If you have a recent version of Distrobox; go to ```bash bci_vr_ws/distrobox``` and:
+   ```bash
+   distrobox create --name bci_cvsaMiVr --dockerfile ./Dockerfile
+   distrobox enter bci_cvsaMiVr
    ```
 
 ---
