@@ -2,6 +2,8 @@
 
 This repository serves as the **Meta-Repository** (Parent Repo) for a Brain-Computer Interface (BCI) system integrated with Virtual Reality (VR). The project is currently being conducted at the **ISR (Institute for Systems and Robotics)** in Lisbon.
 
+---
+
 ## 🎯 Project Objective
 The core of this research is to investigate the integration of two distinct BCI paradigms to enhance user control and performance:
 1.  **Covert Visual Spatial Attention (CVSA)**
@@ -9,12 +11,38 @@ The core of this research is to investigate the integration of two distinct BCI 
 
 The study hypothesizes that using CVSA as a complementary signal can facilitate the modulation of Motor Imagery, resulting in more robust and intuitive control within a virtual environment.
 
-## 🕹️ VR Feedback Mechanism
+---
+
+## 🕹️ VR Feedback Mechanism & Setup
 The user interacts with a VR environment where the feedback is represented by a **dynamic cube**:
 * **Transparency Axis (CVSA):** The cube materializes or dematerializes based on the focus of spatial attention.
 * **Vertical Axis (MI):** The cube moves up or down based on the activation of Motor Imagery.
 
 The system is designed to validate this dual approach, allowing for experimental sessions in both **MI-only** mode and combined **CVSA + MI** mode.
+
+### Unity & VR Configuration
+* **Software Version:** Unity 2022 LTS.
+* **VR Runtime:** SteamVR (v2.9.6).
+* **Project Settings:**
+    1. Go to `Edit` -> `Project Settings` -> `XR Plugin Management`.
+    2. In the **Windows (PC)** tab, ensure **OpenXR** is selected.
+    3. Under OpenXR, add the correct **Controller Profile** (e.g., *Oculus Touch Controller Profile*).
+* **Connection:** * Ensure the correct IP address is set in both the **'Robotics'** component and the **'ROS_manager'** script within the Unity scene.
+
+---
+
+## 🌐 Network & Multi-PC Setup
+If the system is running across two different machines (e.g., one for signal processing and one for VR), you must configure the ROS environment variables:
+
+1.  **Environment Variables:**
+    ```bash
+    export ROS_MASTER_URI=http://[MASTER_IP]:11311
+    export ROS_IP=[LOCAL_IP]
+    ```
+2.  **IP Synchronization:** * Set the correct Master IP in the `ROS_CONNECTOR` settings.
+    * Double-check that the IP matches in the Unity **'Robotics'** and **'ROS_manager'** fields to allow the TCP endpoint to communicate correctly.
+
+---
 
 ## 🧠 Technical Stack & Signal Processing
 The architecture relies on a professional BCI pipeline:
@@ -59,7 +87,5 @@ Inside, you will find:
 To get started with the environment, navigate to the folder and follow the instructions:
 ```bash
 cd distrobox
-# Read the README.md inside for setup steps
+# Read the README.md inside distrobox folder for setup steps
 ```
-
-
