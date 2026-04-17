@@ -22,12 +22,15 @@ The system is designed to validate this dual approach, allowing for experimental
 
 ### Unity & VR Configuration
 * **Software Version:** Unity 2022 LTS.
+* **Tested Hardware:** Fully tested with the **Pico 4** VR headset.
 * **VR Runtime:** SteamVR (v2.9.6).
 * **Project Settings:**
     1. Go to `Edit` -> `Project Settings` -> `XR Plugin Management`.
     2. In the **Windows (PC)** tab, ensure **OpenXR** is selected.
     3. Under OpenXR, add the correct **Controller Profile** (e.g., *Oculus Touch Controller Profile*).
-* **Connection:** * Ensure the correct IP address is set in both the **'Robotics'** component and the **'ROS_manager'** script within the Unity scene.
+* **Audio Check:** To hear the spatial auditory feedback within the Unity Editor during tests, ensure you deactivate the **"Mute Audio"** button (or select "Unmute") located at the top of the **Game** view window.
+* **Scene Adjustments:** Minor environmental tweaks might be necessary depending on the subject's anatomy. For instance, you can easily adjust the vertical position of the **"Finish bar"** in the Inspector for the **MI** and **Hybrid** paradigms to ensure it is comfortably reachable visually.
+* **Connection:** Ensure the correct IP address is set in both the **'Robotics'** component and the **'ROS_manager'** script within the Unity scene.
 
 ---
 
@@ -50,6 +53,8 @@ The architecture relies on a professional BCI pipeline:
 * **Framework:** The system is built on **ROS (Robot Operating System)**, specifically leveraging the **ROSNeuro** ecosystem for neural data acquisition and processing.
 * **Feature Extraction:** * Signal power is extracted using the **Hilbert Transform** within the frequency bands of interest for both paradigms.
     * This provides a smooth power envelope used for real-time control.
+
+---
 
 ## 🏗️ Workspace Structure (Submodules)
 This workspace organizes the project through several ROS packages managed as Git Submodules:

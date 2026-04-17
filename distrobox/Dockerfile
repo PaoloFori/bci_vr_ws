@@ -2,7 +2,7 @@ FROM osrf/ros:noetic-desktop-full
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --fix-missing \
     python3-pip \
     python3-rosdep \
     python3-catkin-tools \
@@ -35,12 +35,14 @@ RUN curl -s --compressed -o /etc/apt/sources.list.d/rosneuro.list "https://rosne
 RUN echo "yaml https://rosneuro.github.io/ppa/ubuntu/rosdep-rosneuro-packages.yaml" > /etc/ros/rosdep/sources.list.d/50-rosneuro-packages.list && \
     rosdep update
 
-RUN apt-get update && apt-get install -y bash-completion
+RUN apt-get update && apt-get install -y --fix-missing bash-completion
 
 RUN echo "source /usr/share/bash-completion/bash_completion" >> /etc/bash.bashrc && \
     echo "source /opt/ros/noetic/setup.bash" >> /etc/bash.bashrc && \
     curl -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o /etc/bash_completion.d/git-completion.bash
     
 RUN echo "source /opt/ros/noetic/setup.bash" >> /root/.bashrc
+
+ENV SESSION_MANAGER=""
 
 CMD ["bash"]

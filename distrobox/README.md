@@ -24,6 +24,7 @@ Go to ```bash bci_vr_ws/distrobox``` and:
    ```bash
    podman build -t bci_image .
    ```
+You must be connected to the internet to build the image.
 2. **Create the Distrobox container:**
    ```bash
    distrobox create --name bci_cvsaMiVr --image localhost/bci_image
