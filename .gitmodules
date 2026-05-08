@@ -18,7 +18,7 @@
 [submodule "src/processing_bci"]
 	path = src/processing_bci
 	url = git@github.com:PaoloFori/processing_bci.git
-	branch = vr
+	branch = fbcsp_vr
 [submodule "src/qda_bci"]
 	path = src/qda_bci
 	url = git@github.com:PaoloFori/qda_bci.git
@@ -46,3 +46,7 @@
 	path = src/analysis_bci
 	url = git@github.com:PaoloFori/analysis_bci.git
 	branch = cvsa_mi
+[submodule "src/slda_bci"]
+	path = src/slda_bci
+	url = git@github.com:PaoloFori/slda_bci.git
+	branch = vr
