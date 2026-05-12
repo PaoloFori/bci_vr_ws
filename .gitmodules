@@ -19,10 +19,6 @@
 	path = src/processing_bci
 	url = git@github.com:PaoloFori/processing_bci.git
 	branch = fbcsp_vr
-[submodule "src/qda_bci"]
-	path = src/qda_bci
-	url = git@github.com:PaoloFori/qda_bci.git
-	branch = vr
 [submodule "src/rosneuro_integrator"]
 	path = src/rosneuro_integrator
 	url = git@github.com:PaoloFori/rosneuro_integrator.git
