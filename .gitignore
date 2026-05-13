@@ -4,3 +4,6 @@ recordings
 .vscode
 .catkin_tools
 images
+CLAUDE.md
+*.gdf
+.csv
