@@ -6,5 +6,5 @@ recordings
 images
 CLAUDE.md
 *.gdf
-.csv
+*.csv
 test_node_data
