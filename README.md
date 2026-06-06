@@ -49,7 +49,7 @@ CVSA is most informative at **trial onset** (first ~2.5 s of continuous feedback
 Both signals are active simultaneously. The fuser combines them using a **Bayesian LOP** where:
 - CVSA dominates **early in the trial** (α=1 at t=0) — fast, attention-driven onset
 - MI takes over **progressively** (α→0 over 2.5 s) — sustained, movement-driven output
-- An **agreement gate** stalls the integrator when MI and CVSA disagree, preventing wrong accumulations
+- When classifiers **disagree** the LOP products cancel near-uniformly → integrator naturally stalls (no explicit gate needed)
 
 The hybrid paradigm is designed to exploit the complementary temporal profiles: CVSA is faster but not sustained; MI is slower to build up but robust at steady-state.
 
@@ -525,15 +525,21 @@ After collecting evaluation GDF files, analyse performance in MATLAB:
 ```matlab
 cd src/analysis_bci/matlab_simulation
 
-% Inspect a single session (all trials + ERD/ERS + topoplots)
-main_evaluate_single
+% Inspect a single recording (per-trial plot of integrator signal)
+main_simulate
 
-% Compare sessions across subjects or conditions
-main_compare_sessions
+% Full pipeline on one or more GDFs → metrics + ERD/ERS + topoplots + SVG
+main_session_overview
+
+% Matched hybrid-vs-MI-vs-CVSA comparison (saved-trial analysis)
+main_hybrid_advantage
+
+% Interactive scrollable viewer: classifier probabilities + integrator output
+main_browse_gdf
 ```
 
-`main_evaluate_single` produces per-session SVG figures in `<gdf_dir>/results/<basename>/`:
-- `01_metrics.svg` — trial accuracy (897/898/899), sLDA frame accuracy per class, time-to-hit, time-to-peak
+`main_session_overview` produces per-session SVG figures in `<gdf_dir>/results/<basename>/`:
+- `01_metrics.svg` — trial accuracy (897/898/899), sLDA frame accuracy per class, time-to-hit
 - `02_erd_classXXX.svg` — ERD/ERS heatmap [time × channel] per class, per frequency band
 - `03_spatial_erd.svg` — toposcatter maps: static (mean CF) + time snapshots
 
