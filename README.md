@@ -531,17 +531,24 @@ main_simulate
 % Full pipeline on one or more GDFs → metrics + ERD/ERS + topoplots + SVG
 main_session_overview
 
-% Matched hybrid-vs-MI-vs-CVSA comparison (saved-trial analysis)
-main_hybrid_advantage
+% Classifier probability analysis — hybrid GDFs only
+main_hybrid_advantage_probs
+
+% Counterfactual integrator analysis — hybrid GDFs only
+main_hybrid_advantage_integ
 
 % Interactive scrollable viewer: classifier probabilities + integrator output
 main_browse_gdf
 ```
 
-`main_session_overview` produces per-session SVG figures in `<gdf_dir>/results/<basename>/`:
-- `01_metrics.svg` — trial accuracy (897/898/899), sLDA frame accuracy per class, time-to-hit
-- `02_erd_classXXX.svg` — ERD/ERS heatmap [time × channel] per class, per frequency band
-- `03_spatial_erd.svg` — toposcatter maps: static (mean CF) + time snapshots
+`main_session_overview` saves seven SVGs in `<gdf_dir>/analysis_results/overview/`:
+- `overview_trial_accuracy.svg` — trial accuracy bars per file (HIT / HIT-no-TO) + per-paradigm mean
+- `overview_time_metrics.svg` — time-to-HIT and time-to-MISS distributions
+- `overview_sample_accuracy.svg` — offline frame accuracy per stream (MI / CVSA / fused)
+- `overview_csp_importance.svg` — CSP filter weights: full-scalp topoplots (all standard 10-20 labeled) per class + selectivity + stacked band bars (skipped if no YAML)
+- `overview_slda_importance.svg` — sLDA-weighted importance: channel topoplot `Σ|coef|·|CSP_filter|`, band bars, feature selection heatmap (comp × band) (skipped if no YAML)
+- `overview_erd_csp_corr.svg` — ERD/ERS class discrimination vs CSP filter weight scatter (Pearson r per band) (skipped if no YAML)
+- `overview_roi_timecourse.svg` — Left/Right/Midline hemisphere ROI ERD/ERS time-courses: per-class traces + lateralization c1−c2 (skipped if no YAML)
 
 ---
 
